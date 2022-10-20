@@ -305,3 +305,49 @@ html, body {
     margin: 40px auto 80px auto;
     font-size: 1.75em;
 }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted #272343;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: #272343;
+    opacity: 0.95;
+    min-width: 300px;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.75em;
+    position: absolute;
+    z-index: 1;
+    top: 15%;
+    left: 95%; 
+}
+.tooltiptext h1,h2,h3,h4,h5,h6 {
+    color: white;
+}
+.tooltip p,b{
+    color: white;
+    text-align: left;
+    margin: 0;
+}
+.tooltip hr{
+    margin-bottom: 1.3em;
+}
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
