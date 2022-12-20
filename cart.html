@@ -28,7 +28,7 @@
 
 </head>
 
-<body onload="cart()">
+<body onload="cart();">
     <header class="main-header">
         <nav class="nav main-nav">
             <ul>
@@ -65,10 +65,29 @@
                         <h4>Total</h4>
                         <h4 id="price">1050 baht</h4>
                     </div>
-                    <button onclick="alert('Success');">CHECK OUT</button>
+                    <button onclick="purchase()">CHECK OUT</button>
                 </div>
 
             </div>
+        </div>
+
+        <div class="delivery" id="delivery" style="visibility: hidden;">
+            <div>
+                <label>First name:</label>
+                <input type="text" id="name">
+                <label>Surname:</label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="delivery_address">Delivery Address:</label><br>
+                <textarea id="delivery_address" name="delivery_address" rows="5" cols="60"></textarea><br>
+            </div>
+            <div>
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone"><br>
+            </div>
+            <div class="butcen"><br><button type="button" id="submit" onclick="submit();">Submit</button></div>
+
         </div>
 
     </section>

@@ -3,8 +3,8 @@ function cart() {
   if (parseInt(localStorage.getItem("a")) != 0) {
     var item = document.createElement("div");
     list.appendChild(item);
-    item.setAttribute("onclick","deletelist('a');");
-    item.id="a";
+    item.setAttribute("onclick", "deletelist('a');");
+    item.id = "a";
     item.className = "item";
 
     var span = document.createElement("span");
@@ -30,7 +30,7 @@ function cart() {
 
   if (parseInt(localStorage.getItem("b")) != 0) {
     var item = document.createElement("div");
-    item.id="b";
+    item.id = "b";
     list.appendChild(item);
     item.className = "item";
 
@@ -58,7 +58,7 @@ function cart() {
 
   if (parseInt(localStorage.getItem("c")) != 0) {
     var item = document.createElement("div");
-    item.id="c";
+    item.id = "c";
     list.appendChild(item);
     item.className = "item";
 
@@ -85,7 +85,7 @@ function cart() {
   }
   if (parseInt(localStorage.getItem("d")) != 0) {
     var item = document.createElement("div");
-    item.id="d";
+    item.id = "d";
     list.appendChild(item);
     item.className = "item";
 
@@ -112,19 +112,36 @@ function cart() {
   }
 
   getprice();
-
 }
 
-function getprice(){
+function getprice() {
   var price = document.getElementById("price");
-  var amountal = parseInt(localStorage.getItem("a"))+parseInt(localStorage.getItem("b"))+parseInt(localStorage.getItem("c"))+parseInt(localStorage.getItem("d"));
-  var totalprice = (amountal*500)+50;
+  var amountal =
+    parseInt(localStorage.getItem("a")) +
+    parseInt(localStorage.getItem("b")) +
+    parseInt(localStorage.getItem("c")) +
+    parseInt(localStorage.getItem("d"));
+  var totalprice = amountal * 500 + 50;
   price.innerHTML = totalprice.toString().concat(" Baht");
 }
 
-function deletelist(a){
+function deletelist(a) {
   var liw = document.getElementById(a);
-  localStorage.setItem(a,0);
+  localStorage.setItem(a, 0);
   liw.remove();
   getprice();
+}
+
+function purchase() {
+  var open = document.getElementById("delivery");
+  if (open.style.visibility === "hidden") {
+    open.style.visibility = "visible";
+  } else {
+    open.style.visibility = "hidden";
+  }
+}
+
+function submit() {
+  alert("SUCCESS!");
+  window.location.pathname = "/tracker.html";
 }
