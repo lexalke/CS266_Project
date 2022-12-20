@@ -1,76 +1,95 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>The Voy Band | Store</title>
-        <meta name="description" content="This is the description">
-        <link rel="stylesheet" href="styles.css" />
-        <script src="store.js" async></script>
-    </head>
-    <body>
-        <header class="main-header">
-            <nav class="main-nav nav">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="store.html">STORE</a></li>
-                    <li><a href="about.html">ABOUT</a></li>
-                </ul>
-            </nav>
-            <h2 class="band-name band-name-large">THE VOY BAND</h2s>
-        </header>
-        <section class="container content-section">
-            <h2 class="section-header">STORE</h2>
-            <div class="shop-items">
-                <div class="shop-item">
-                    <span class="shop-item-title">A Whole new world</span>
-                    <img class="shop-item-image" src="Images/Album 1.png">
-                    <div class="shop-item-details">
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <span class="shop-item-title">Dusk till dawn</span>
-                    <img class="shop-item-image" src="Images/Album 2.png">
-                    <div class="shop-item-details">
-                        <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <span class="shop-item-title">I wanna live forever</span>
-                    <img class="shop-item-image" src="Images/Album 3.png">
-                    <div class="shop-item-details">
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                    </div>
-                </div>
-                <div class="shop-item">
-                    <span class="shop-item-title">Still got times</span>
-                    <img class="shop-item-image" src="Images/Album 4.png">
-                    <div class="shop-item-details">
-                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                    </div>
+
+<head>
+    <title>The Voy Band | Store</title>
+    <meta name="description" content="This is the description">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="store.js" async></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-nav nav">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="store.html">STORE</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </nav>
+        <h2 class="band-name band-name-large">THE VOY BAND</h2s>
+    </header>
+    <section class="container content-section">
+        <h2 class="section-header">STORE</h2>
+        <div class="shop-items">
+            <div class="shop-item">
+                <span class="shop-item-title">A Whole new world</span>
+                <img class="shop-item-image" src="Images/Album 1.png">
+                <div class="shop-item-details">
+                    <button class="btn btn-primary shop-item-button" type="button" onclick="clickcart(0)">ADD TO
+                        CART</button>
                 </div>
             </div>
-        </section>
-        <footer class="main-footer">
-            <div class="container main-footer-container">
-                <ul class="nav footer-nav">
-                    <li>
-                        <a href="https://www.facebook.com" target="_blank">
-                            <img src="Images/Facebook Logo.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.spotify.com" target="_blank">
-                            <img src="Images/Spotify Logo.png">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com" target="_blank">
-                            <img src="Images/YouTube Logo.png">
-                        </a>
-                    </li>
-                
-                </ul>
+            <div class="shop-item">
+                <span class="shop-item-title">Dusk till dawn</span>
+                <img class="shop-item-image" src="Images/Album 2.png">
+                <div class="shop-item-details">
+                    <button class="btn btn-primary shop-item-button" type="button" onclick="clickcart(1)">ADD TO
+                        CART</button>
+                </div>
             </div>
-        </footer>
-    </body>
+            <div class="shop-item">
+                <span class="shop-item-title">I wanna live forever</span>
+                <img class="shop-item-image" src="Images/Album 3.png">
+                <div class="shop-item-details">
+                    <button class="btn btn-primary shop-item-button" type="button" onclick="clickcart(2)">ADD TO
+                        CART</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <span class="shop-item-title">Still got times</span>
+                <img class="shop-item-image" src="Images/Album 4.png">
+                <div class="shop-item-details">
+                    <button class="btn btn-primary shop-item-button" type="button" onclick="clickcart(3)">ADD TO
+                        CART</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <ul class="nav footer-nav">
+                <li>
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="Images/Facebook Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.spotify.com" target="_blank">
+                        <img src="Images/Spotify Logo.png">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="Images/YouTube Logo.png">
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </footer>
+    <div class="cart" onclick="openCart()">
+        <span>
+            <img src="Images/shopping-cart-empty-side-view.png">
+        </span>
+    </div>
+    <div class="carts" id="carts" style="visibility: hidden;">
+        <div class="cart-list-data" id="listitem">
+
+        </div>
+        <button onclick="gotocart()">Check out</button>
+    </div>
+    
+</body>
+
 </html>
